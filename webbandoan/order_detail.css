@@ -1,0 +1,115 @@
+/* Container chính cho trang chi tiết */
+.order-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* ===== THANH TRẠNG THÁI (STEPPER) ===== */
+.status-stepper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: #fff;
+    padding: 30px 20px;
+    border-radius: 18px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+.step {
+    flex: 1;
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.step-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #eee;
+    color: #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    z-index: 2;
+    border: 3px solid #fff;
+    transition: 0.3s;
+}
+
+.step-text {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #888;
+    font-weight: 600;
+}
+
+.step-line {
+    position: absolute;
+    top: 21px;
+    left: 50%;
+    width: 100%;
+    height: 4px;
+    background: #eee;
+    z-index: 1;
+}
+
+/* Trạng thái Active (Màu đỏ thương hiệu) */
+.step.active .step-icon {
+    background: #ff4d4f;
+    color: white;
+}
+
+.step.active .step-text {
+    color: #333;
+}
+
+.step.active .step-line {
+    background: #ff4d4f;
+}
+
+/* Đơn hàng bị hủy */
+.step-cancelled {
+    color: #ff4d4f;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    border: 2px dashed #ff4d4f;
+    border-radius: 12px;
+    background: #fff1f0;
+}
+
+/* ===== BỐ CỤC THÔNG TIN TỔNG QUAN ===== */
+.order-summary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.order-box-header {
+    margin-top: 0;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    font-size: 18px;
+}
+
+.total-price-large {
+    color: #ff4d4f;
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Responsive cho mobile */
+@media (max-width: 600px) {
+    .order-summary-grid {
+        grid-template-columns: 1fr;
+    }
+    .step-text {
+        font-size: 11px;
+    }
+}
